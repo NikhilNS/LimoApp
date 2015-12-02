@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/ionic.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <title>Limo App</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+        <script type="text/javascript">
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/') + 1);
+        if (localStorage.login == "true" && filename == 'login.html') {
+            window.location.href = "index.html";
+        } else if (localStorage.login == null) {
+            window.location.href = "login.html";
+        } else if (localStorage.login == "false" && filename != 'login.html') {
+            window.location.href = "login.html";
+        }
+        </script>
+    </head>
+    <body>
+        <div class="bar bar-header bar-dark">
+          <h1 class="title">Limo App</h1>
+          <button class="button button-clear" id="logout">Logout</button>
+        </div>
+        <div class="container">
+        <div class="content">
+          <div class="list">
+            <a class="item item-icon-right" href="book_taxi.html">Book My Taxi <i class="icon ion-chevron-right"></i></a>
+            <a class="item item-icon-right" href="history.html">Booking History<i class="icon ion-chevron-right"></i></a>
+            <a class="item item-icon-right" href="settings.html">Settings<i class="icon ion-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/locationpicker.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="js/auth.js"></script>
+    </body>
+</html>
